@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>jQuery add / remove textbox example</title>
+ 
+<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+ 
+<title> Add/Remove dynamic rows in HTML table </title>
+
+    <script language="javascript">
+    function addRow(tableID)
+    {
+    	var table=document.getElementById(tableID);
+    	var rowCount=table.rows.length;
+    	var row=table.insertRow(rowCount);
+    	var cell1=row.insertCell(0);
+    	var element1=document.createElement("input");
+            element1.setAttribute('type','text');
+            element1.setAttribute('name','comment');
+            element1.setAttribute('id','text');
+            element1.setAttribute('value','');
+            element1.setAttribute('onblur','changeText(this)');
+    	element1.type="text";
+    	element1.name="textbox"+ (rowCount+1);
+    	element1.placeholder=element1.name;
+    	cell1.appendChild(element1);
+
+    }
+    
+	function deleteRow(tableID) 
+	{
+        try 
+        {
+        	var table = document.getElementById(tableID);
+        	var rowCount = table.rows.length;
+        	table.deleteRow(rowCount-1);
+        	rowCount--;	
+       }
+       catch(e) 
+       {
+            alert(e);
+       }
+    }
+    
+	</script>
+	
+ 
+    <table id="dataTable" width="350px">
+	    <tbody> 
+		    <tr>
+		    	 <td><input type="text" size="40"> </td>
+		    	 <td><input value=" +" onclick="addRow('dataTable')" type="button"></td>
+    			 <td><input value="-" onclick="deleteRow('dataTable')" type="button"></td>
+    			
+		    </tr>
+		</tbody>
+	</table>
