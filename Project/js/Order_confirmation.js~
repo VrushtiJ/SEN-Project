@@ -1,0 +1,11 @@
+$(document).ready(function()
+{
+     alert("hello");
+     $("#button34 li").click(function()
+     {
+          alert(this.value);
+          
+     }
+);
+}
+);

@@ -1,0 +1,58 @@
+<?php
+
+if(!class_exists("edit_price"))
+{
+	class edit_price
+	{
+		function edit_prices()
+          {
+	          
+	          if(!empty($_POST)){
+	          
+               $username ="RETAILERS";
+               $password = "mysql";
+               $host = "localhost";
+               $dbname = "order_manager";
+
+               $con = new mysqli("$host", "$username", "$password", "$dbname");
+
+               if (!$con)
+                 {
+                 die('Could not connect: ' . mysqli_connect_error());
+                 }
+  
+               mysqli_select_db($con,"order_manager")  or die(mysqli_connect_error($con)); 
+
+
+               $categoryname = $_POST['category'];
+			   $model_number = $_POST['model'];
+			   $new_price = $_POST['element_5'];
+           //  echo $new_price;   
+              echo $model_number;
+            
+             //   echo $categoryname;
+                
+			//	$sql = "SELECT * FROM products WHERE categoryname = '$categoryname' AND model_number = '$model_number'";
+			//	$res = mysqli_query($con, $sql) or die(mysql_error());
+               $sql="UPDATE products SET price='$new_price' WHERE category='$categoryname' AND model='$model_number' ";
+               $result = mysqli_query($con, $sql) or die(mysql_error());
+               
+               if ($result) 
+               {
+                  return "Succesfully added";	
+               }
+               else	
+               {
+					return "Price not changed";
+               }
+                mysqli_close($con);
+	
+               }
+
+          }
+     }
+    }
+?>
+
+
+

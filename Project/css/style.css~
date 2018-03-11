@@ -429,7 +429,7 @@ a.brand span {
 	border-left: none;
 	border-right: none;
 	text-decoration: none;
-	font-size: 15px;
+	font-size: 13.5px;
 	font-style: inherit;
 	font-family: sans-serif;
 	font-kerning: inherit;

@@ -1,19 +1,23 @@
 body
 {
-	background: #030303;
+	background: #9FA4AF;
 	font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
 	font-size:small;
 	margin:8px 0 16px;
 	text-align:left;
+	margin-top: 0px;
+	
 }
-textarea::-webkit-input-placeholder {  color: #010101;}
+
 #form_container
 {
 	background:#F3F6F7;
 	
 	margin:0px;
+	margin-left: 120px;
 	text-align:left;
 	width:920px;
+	margin-top: 0px;
 }
 
 #top
@@ -70,7 +74,7 @@ textarea::-webkit-input-placeholder {  color: #010101;}
   
     align-content: center;
       margin-top: 1px;
-      margin-right: 30px;
+      margin-right: 70px;
       float: right;
 }
 .btn-primary15{
@@ -111,7 +115,7 @@ textarea::-webkit-input-placeholder {  color: #010101;}
 */.btn-primary11{
 	background-color: #2B802C;
   border-radius: 28px;
-  margin-left: -15px;
+  margin-left: -25px;
   
     align-content: center;
       margin-top: -7px;
@@ -119,10 +123,10 @@ textarea::-webkit-input-placeholder {  color: #010101;}
 .btn-primary12{
 	background-color: #D8244D;
   border-radius: 28px;
-  margin-left: -14px;
+  margin-left: 2px;
   margin-right: -10px;
     align-content: center;
-      margin-top: 10px;
+      margin-top: -7px;
 }
 .btn-primary11:hover{
 
@@ -212,6 +216,7 @@ form ul
 	font-size:100%;
 	list-style-type:none;
 	margin:0;
+	margin-left: 150px;
 	padding:0;
 	width:100%;
 }
@@ -433,6 +438,7 @@ label.description
 	line-height: inherit;
 	padding:0 0 1px;
 	font-family: serif;
+	float: left;
 }
 
 span.symbol
@@ -449,8 +455,9 @@ input.text
 	border-right:1px solid #c3c3c3;
 	border-top:1px solid #7c7c7c;
 	color:#333;
-	font-size:100%;
+	font-size:80%;
 	margin:0;
+	float: right;
 	/*padding: 7px 0;
 }
 

@@ -1,15 +1,3 @@
-/*
-* Author: ThemifyCloud
-* Template: Metro Admin Template - Bootstrap Theme
-* Version: 1.0.0
-* Bootstrap version: 2.3.1
-* Copyright 2013 Bootstrap Metro Dashboard
-* www: http://themifycloud.com
-* mail: support@themifycloud.com
-*/
-
-/* Import Section
-=================================================================== */
 @import url("jquery-ui-1.8.21.custom.css");								/* jQuery User Interface Framework Styles */
 @import url("fullcalendar.css");										/* Calendars Styles */
 @import url("chosen.css");												/* Select Boxes Styles */  
@@ -25,11 +13,11 @@
 @import url("font-awesome.min.css");									/* Font Awesome Styles */
 @import url("font-awesome-ie7.min.css");								/* Font Awesome Styles */
 @import url("glyphicons.css");											/* Glyphicons Font */
-@import url("halflings.css");											/* Glyphicons Halflings Font */
-@import url("style-forms.css");											/* Forms */
+@import url("halflings.css");
 
-/* Main Colors
-=================================================================== */
+.a signup{
+color: blue;
+}
 
 .black,
 .black [class="box-header"],
@@ -308,9 +296,9 @@ h6 {
 }
 
 .navbar-inner {
-	margin-bottom: 0px;
+	margin-bottom: 50px;
   	
-	min-height: 20px;
+	min-height: 80px;
   	padding-right: 20px;
   	padding-left: 20px;
 	background: #030303;
@@ -488,7 +476,7 @@ a.dropmenu {}
 	border-bottom: 1px solid #578EBE;
 }
 .header-nav .nav li:hover{
-background: #578EBE;
+background: blue;
 }
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -552,7 +540,7 @@ border-bottom: 1px ;
   	margin: 0px 0 0 0;
   	list-style: none;
 	text-shadow: none;
-	-webkit-border-radius: 0px;
+  	-webkit-border-radius: 0px;
        -moz-border-radius: 0px;
           	border-radius: 0px;
   	-webkit-box-shadow: none;

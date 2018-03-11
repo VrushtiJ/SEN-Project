@@ -1,0 +1,53 @@
+
+
+
+<?php
+
+if(!class_exists("add_group1"))
+{
+
+	class add_group1
+	{
+		function add_group()
+          {
+               if(!empty($_POST)){
+               $username ="RETAILERS";
+               $password = "mysql";
+               $host = "localhost";
+               $dbname = "order_manager";
+
+               $con = new mysqli("$host", "$username", "$password", "$dbname");
+               if (!$con)
+                 {
+                 die('Could not connect: ' . mysqli_connect_error());
+                 }
+  
+               mysqli_select_db($con,"order_manager")  or die(mysqli_connect_error($con)); 
+               $gname = $_POST['group_name'];
+               $query = "SELECT groupname FROM groups WHERE groupname = '".$gname."'";
+               $retval = mysqli_query($con,$query);
+               if($row = mysqli_fetch_assoc($retval))  {
+                    
+                    return "Group name already exists";
+               }
+               $sql="INSERT INTO groups (groupname) VALUES('".$gname."')"; //WHERE NOT EXISTS (SELECT * FROM order_manager.groups WHERE groups.groupname='".$gname."')";
+               $result = mysqli_query($con, $sql);               	        
+        //      $check= mysqli_num_rows($result);  
+               	          
+              //return "";
+               if ($result) 
+               {
+                  return "Succesfully added";
+                         
+               }
+                mysqli_close($con);
+	
+               }
+
+          }
+     }
+    }
+    
+?>
+
+

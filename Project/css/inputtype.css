@@ -1,0 +1,16 @@
+input[type=text] {
+    font-weight: bold;
+    color: black;
+}
+::-webkit-input-placeholder {
+    color: black;
+    font-weight: bold;
+}
+:-moz-placeholder {
+    color: red;
+    font-weight: bold;
+}
+:-ms-input-placeholder {
+    color: red;
+    font-weight: bold;
+}

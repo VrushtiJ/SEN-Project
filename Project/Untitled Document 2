@@ -1,0 +1,21 @@
+  header("location:Add_new_product_php.php?value=  echo '<script>'
+   , 'alert(rowCount);'
+   , '</script>'
+   ");
+  //   header("location:Add_new_product_php.php?value= <script> alert(rowCount); </script>");
+     /*  return rowCount;
+     <?php
+          if(isset($_POST['submit']))
+          {
+ 
+      header("location:Add_new_product_php.php?value= <script> call(); </script>");
+          }
+          
+     ?>*/
+     		<?php
+          if(isset($_POST['submit']))
+          {
+ 
+ echo '<script> alert(call()+" inn"); </script>';  
+      //       header("location:Add_new_product_php.php?value= <script> call(); </script>");
+          }?>

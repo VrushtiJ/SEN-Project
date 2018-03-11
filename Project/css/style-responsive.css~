@@ -44,10 +44,10 @@
 	}
 	
 	#content {
-		width: 84.578%;
+		width: 85.578%;
 		padding: 20px;
 		margin: 0px;
-		margin-left: 19.422% !important;
+		margin-left: 17.422% !important;
 	}
 	
 	.dark {

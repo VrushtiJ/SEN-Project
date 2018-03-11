@@ -1,0 +1,60 @@
+<?php
+session_destroy();
+if(!class_exists("log_in")){
+     class log_in
+     {
+          function LogIn()
+          {
+               if(!empty($_POST))
+               {
+                    $username ="RETAILERS";
+                    $password = "mysql";
+                    $host = "localhost";
+                    $dbname = "order_manager";
+
+                    $con = new mysqli("$host", "$username", "$password", "$dbname");
+                    //$con = mysql_connect("localhost","RETAILERS", "mysql");
+                    if (!$con)
+                      {
+                      die('Could not connect: ' . mysqli_connect_error());
+                      }
+
+                    //mysqli_select_db("temp" , $con);
+                    mysqli_select_db($con,"order_manager")  or die(mysqli_connect_error($con)); 
+                    $username=$_POST['username'];
+                    $o_pwd=$_POST['pwd'];
+                    $pwd=md5($o_pwd);
+                    setcookie($username);
+                    $i=1;
+                    $sql = "SELECT username,password FROM operator WHERE username='$username' AND password='$pwd' AND approvedstatus='$i'";
+                    
+                    $retval = mysqli_query($con,$sql);
+                    //$retval = mysqli_query($sql,$con);
+                    
+                    if(!$retval )
+                    {
+                      die('Could not get data: ' . mysqli_connect_error());
+                      
+                    }
+                    $flag=false;
+                    while($row = mysqli_fetch_assoc($retval))
+                    {
+                    session_start();
+                    $_SESSION['username']=$username;
+                    $flag=true;
+                         header('Location:index.php');
+                        echo "EMP ID : {$row['username']}  <br> ";
+                    } 
+                    if($flag==false)
+                    {
+                    //     session_destroy();
+                         return "Username or Password Invalid or you are not approved by admin";
+                    }
+
+                    mysqli_close($con);
+               }
+          }
+     }
+}
+ 
+?>
